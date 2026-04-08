@@ -8,7 +8,7 @@ export default function TaskDetails({ tasks, onDelete, onToggle }) {
 
   if (!task) {
     return (
-      <div className="container mx-auto px-4 py-8 text-center">
+      <div className="container mx-auto px-4 sm:px-6 py-8 text-center">
         <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Task Not Found</h2>
         <button
           onClick={() => navigate('/')}
@@ -38,23 +38,23 @@ export default function TaskDetails({ tasks, onDelete, onToggle }) {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
       <button
         onClick={() => navigate(-1)}
-        className="mb-6 flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors"
+        className="mb-6 flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors text-sm sm:text-base"
       >
         <ArrowLeft size={20} />
         Back
       </button>
 
-      <div className={`max-w-2xl mx-auto p-8 rounded-xl shadow-lg border ${getVariantStyles()}`}>
-        <div className="flex justify-between items-start mb-6">
+      <div className={`max-w-2xl mx-auto p-5 sm:p-8 rounded-xl shadow-lg border ${getVariantStyles()}`}>
+        <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-start mb-6">
           <span className={`px-3 py-1 rounded-full text-sm font-medium ${
             task.completed ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
           }`}>
             {task.completed ? 'Completed' : 'Pending'}
           </span>
-          <div className="flex gap-2">
+          <div className="flex gap-2 self-end sm:self-auto">
             <button
               onClick={() => onToggle(task.id)}
               className="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all"
@@ -72,7 +72,7 @@ export default function TaskDetails({ tasks, onDelete, onToggle }) {
           </div>
         </div>
 
-        <h1 className={`text-3xl font-bold mb-4 leading-relaxed ${task.completed ? 'line-through text-gray-400' : 'text-gray-800'}`}>
+        <h1 className={`text-2xl sm:text-3xl font-bold mb-4 leading-relaxed break-words ${task.completed ? 'line-through text-gray-400' : 'text-gray-800'}`}>
           {task.title}
         </h1>
         

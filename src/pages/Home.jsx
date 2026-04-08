@@ -19,13 +19,13 @@ export default function Home({ tasks, loading, error, onDelete, onToggle }) {
   }
 
   return (
-    <div className="container mx-auto px-4">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">All Tasks</h2>
+    <div className="container mx-auto px-4 sm:px-6">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-800 dark:text-white">All Tasks</h2>
       
       {tasks.length === 0 ? (
         <p className="text-center text-gray-500 mt-10">No tasks found. Add a new one!</p>
       ) : (
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {tasks.map((task) => (
             <TaskCard
               key={task.id}

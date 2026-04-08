@@ -16,8 +16,8 @@ export default function TaskForm({ onAdd }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mt-10">
-      <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-white flex items-center gap-2">
+    <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-md mt-6 sm:mt-10">
+      <h2 className="text-lg sm:text-xl font-bold mb-4 text-gray-800 dark:text-white flex items-center gap-2">
         <PlusCircle className="text-blue-600" />
         Add New Task
       </h2>
@@ -32,14 +32,14 @@ export default function TaskForm({ onAdd }) {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Enter task description..."
-          className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white outline-none transition-all"
+          className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white outline-none transition-all text-base"
           required
         />
       </div>
       
       <button
         type="submit"
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
       >
         <PlusCircle size={20} />
         Add Task
